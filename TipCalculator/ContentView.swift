@@ -32,7 +32,7 @@ struct ContentView: View {
                 }.pickerStyle(.segmented)
                 .accessibilityIdentifier("tipPercntageSegmentedControl")
                 
-                Button("Calculate Tip") {
+                Button {
                     guard let total = Double(self.total) else {
                         return
                     }
@@ -47,7 +47,10 @@ struct ContentView: View {
                     }catch{
                         message = error.localizedDescription
                     }
-                }.padding(.top, 20)
+                }label: {
+                    Text("Calculate Tip")
+                }.accessibilityIdentifier("calculateTipButton")
+                .padding(.top, 20)
                 
                 Text(message)
                     .padding(.top, 50)
@@ -56,6 +59,7 @@ struct ContentView: View {
                 
                 Text(tip ?? "")
                     .font(.system(size: 54))
+                    .accessibilityIdentifier("tipText")
                 
                 Spacer()
                 .navigationTitle("Tip Calculator")
