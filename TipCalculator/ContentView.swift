@@ -53,6 +53,7 @@ struct ContentView: View {
                 .padding(.top, 20)
                 
                 Text(message)
+                    .accessibilityIdentifier("messageText")
                     .padding(.top, 50)
                 
                 Spacer()
