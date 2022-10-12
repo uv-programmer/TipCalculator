@@ -30,7 +30,7 @@ struct ContentView: View {
                 } label: {
                     EmptyView()
                 }.pickerStyle(.segmented)
-                .accessibilityIdentifier("tipPercntageSegmentedControl")
+                .accessibilityIdentifier("tipPercentageSegmentedControl")
                 
                 Button {
                     guard let total = Double(self.total) else {
